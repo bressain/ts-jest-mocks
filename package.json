@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "Find out why TS+Jest Mocks are so bad",
   "scripts": {
-    "start": "tsc && node ./build/index.js"
+    "start": "tsc && node ./build/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "Bressain Dinkelman",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.2"
-  },
-  "dependencies": {
-    "ts-node": "^8.5.2"
   }
 }
