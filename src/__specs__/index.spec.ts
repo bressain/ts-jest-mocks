@@ -10,5 +10,11 @@ describe('index', () => {
 
       expect(await subject.useDependency()).toEqual('butts lol, and then I did the other thing')
     })
+
+    it('handles errors from the dependency', async () => {
+      (dependency.doTheThing as jest.Mock).mockRejectedValue('it broke')
+
+      expect(await subject.useDependency()).toEqual('holy crap!')
+    })
   })
 })
