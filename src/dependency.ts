@@ -1,3 +1,3 @@
-export function doTheThing() : string {
-  return 'I did the thing'
+export async function doTheThing() : Promise<string> {
+  return Promise.resolve('I did the thing')
 }

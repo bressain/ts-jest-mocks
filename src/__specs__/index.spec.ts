@@ -1,14 +1,14 @@
 import * as dependency from '../dependency'
-import subject from '../index'
+import * as subject from '../index'
 
 jest.mock('../dependency')
 
 describe('index', () => {
   describe('#useDependency', () => {
-    it('uses the dependency', () => {
-      (dependency.doTheThing as jest.Mock).mockReturnValue('butts lol,')
+    it('uses the dependency', async () => {
+      (dependency.doTheThing as jest.Mock).mockResolvedValue('butts lol,')
 
-      expect(subject()).toEqual('butts lol, and then I did the other thing')
+      expect(await subject.useDependency()).toEqual('butts lol, and then I did the other thing')
     })
   })
 })
